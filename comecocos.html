@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<script type="text/javascript" src="comecocos.js"></script>
+	<title>pacman</title>
+	<style>
+		canvas {
+			border: 5px solid #000000;
+			margin: 50px 50px 50px 100px;
+			background-color: black;
+		}
+
+		#choose{
+			border:5px solid #aaaaaa;
+			width:400px;
+			height:70px;
+			background-color: black;
+			margin-left: 100px;
+			margin-top: -50px;
+		}
+
+		img{
+			width: 60px;
+			height: 60px;
+		}
+
+		button{
+			font-size: 24px;
+			background-color: white; /* Green */
+   			border: none;
+    		color: black;
+   			text-align: center;
+		}
+	</style>
+</head>
+
+<body onload= "startGame()">
+
+	<div id="scene">
+	</div>
+
+	<div id="choose">
+		<img id="blue" src="bluepacman.png" draggable="true" ondragstart="drag(event)">
+		<img id="yellow" src="yellowpacman.png" draggable="true" ondragstart="drag(event)">
+		<img id="red" src="redpacman.png" draggable="true" ondragstart="drag(event)">
+		<button id="btn_play" onclick= "gamearea.play()" style="background-color:green">Play</button>
+		<button id="btn_pause" onclick="gamearea.pause()"> Pause </button>
+		<div id="records" style="float:right">
+			<p id="p1"></p>
+			<p id="p2"></p>
+		</div>
+	</div>
+
+	<script>
+
+		function drag(ev) {
+    		ev.dataTransfer.setData("text", ev.target.id);
+		}
+	</script>
+
+</body>
